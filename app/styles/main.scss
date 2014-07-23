@@ -2,6 +2,151 @@
 @import 'foundation/scss/foundation';
 @import 'skipper';
 
-a.item label {
-    color: #ddd;
+#coral-client {
+  > .bar {
+    background: #282E3A;
+    padding-bottom: .2rem;
+
+    .icon-bar {
+      background: transparent;
+
+      > * {
+        padding: .5rem;
+
+        &:hover {
+          background: transparent;
+          padding-bottom: .2rem;
+          border-bottom: .3rem solid #008cba;
+        }
+
+        i {
+          font-size: 1.4rem;
+        }
+
+        label {
+          font-size: .6rem;
+        }
+      }
+
+      & + .f-dropdown {
+        margin-left: 2rem;
+        border-style: none;
+        background: rgba(0, 0, 0, .97);
+        border-radius: .3rem;
+        color: white;
+
+        &::before,
+        &::after {
+          border-color: transparent transparent rgba(0, 0, 0, .97) transparent;
+        }
+
+        &#dropdown-gallery {
+          h3 {
+            font-size: 85%;
+            color: rgba(255, 255, 255, .7);
+            font-weight: bold;
+            margin-bottom: 1rem;
+          }
+
+          .upload {
+            background: rgba(255, 255, 255, .05);
+            border: 2px dotted rgba(255, 255, 255, .1);
+            text-align: center;
+            color: rgba(255, 255, 255, .7);
+            font-weight: bold;
+            text-transform: lowercase;
+            font-size: 85%;
+            border-radius: 5px;
+            padding: 3em 0 2em 0;
+            vertical-align: middle;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+
+            &:hover {
+              color: rgba(255, 255, 255, .8);
+              border-color: rgba(255, 255, 255, .2);
+            }
+
+            i {
+              font-size: 3em;
+              color: inherit;
+            }
+
+            input {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              right: 0;
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              cursor: pointer;
+              opacity: 0;
+              filter: alpha(opacity=0);
+            }
+          }
+
+          .collapse {
+            input.search {
+              background: rgba(255, 255, 255, .1);
+              color: rgba(255, 255, 255, .7);
+              border-style: none;
+              margin: 0;
+            }
+
+            a.button {
+              background: rgba(255, 255, 255, .3);
+              margin-bottom: 0;
+            }
+          }
+
+          .recent {
+            padding-top: 1rem;
+
+            a {
+              width: 4rem;
+              height: 4rem;
+              background-size: cover;
+              display: inline-block;
+              border-radius: 2rem;
+              text-indent: -3000px;
+              overflow: hidden;
+              margin-right: 1rem;
+
+              &:hover {
+                box-shadow: 0 0 .2rem .1rem rgba(255, 255, 255, .75);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    label.search {
+      margin-top: .5rem;
+
+      i {
+        font-size: 1.5rem;
+        color: white;
+        margin-right: 1rem;
+        color: rgba(255, 255, 255, .2);
+        vertical-align: middle;
+      }
+
+      input {
+        display: inline-block;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, .2);
+        border-radius: .3rem;
+        width: 80%;
+        vertical-align: middle;
+        color: rgba(255, 255, 255, .7);
+        font-weight: bold;
+        font-size: .9rem;
+        margin: 0;
+      }
+    }
+  }
 }
