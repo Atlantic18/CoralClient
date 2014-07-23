@@ -1,5 +1,5 @@
 'use strict';
-var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 9001;
 var SERVER_PORT = 9000;
 var HOSTNAME = 'localhost';
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
