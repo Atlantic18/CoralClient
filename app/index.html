@@ -20,8 +20,12 @@
 <div id="coral-client">
     <section class="bar">
         <div class="row">
-            <div class="large-6 columns">
-                <div class="icon-bar five-up">
+            <div class="large-7 columns">
+                <div class="icon-bar six-up">
+                    <a class="item" data-dropdown="dropdown-properties">
+                        <i class="fi-widget"></i>
+                        <label>Page details</label>
+                    </a>
                     <a class="item" data-dropdown="dropdown-gallery">
                         <i class="fi-photo"></i>
                         <label>Images</label>
@@ -30,17 +34,17 @@
                         <i class="fi-compass"></i>
                         <label>Sitemap</label>
                     </a>
-                    <a class="item" data-dropdown="dropdown-properties">
-                        <i class="fi-widget"></i>
-                        <label>Properties</label>
+                    <a class="item">
+                        <i class="fi-target"></i>
+                        <label>Redirections</label>
                     </a>
                     <a class="item">
                         <i class="fi-megaphone"></i>
                         <label>Translations</label>
                     </a>
                     <a class="item">
-                        <i class="fi-calendar"></i>
-                        <label>Changelog</label>
+                        <i class="fi-social-github"></i>
+                        <label>Source</label>
                     </a>
                 </div>
 
@@ -127,10 +131,16 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a>About<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                        <a>About <sup>19</sup><i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
                                     </li>
                                 </ul>
                             </li>
+                        </ul>
+                    </section>
+                    <section class="footer">
+                        <ul class="button-group radius right">
+                            <li><a href="#" class="cancel secondary button tiny"><i class="fi-x"></i> Cancel</a></li>
+                            <li><a href="#" class="success button tiny"><i class="fi-check"></i> Save</a></li>
                         </ul>
                     </section>
                 </div>
@@ -143,13 +153,18 @@
                         <section class="body">
                             <fieldset>
                                 <legend>Mandatory properties</legend>
-
+                                <div class="row">
+                                    <div class="large-6 columns">
                                         <label for="properties-form-title">Title
                                             <input type="text" id="properties-form-title" />
                                         </label>
+                                    </div>
+                                    <div class="large-6 columns">
                                         <label for="properties-form-slug">Slug
                                             <input type="text" id="properties-form-slug" />
                                         </label>
+                                    </div>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Attributes</legend>
@@ -215,7 +230,7 @@
                     </form>
                 </div>
             </div>
-            <div class="large-4 large-offset-2 columns">
+            <div class="large-4 large-offset-1 columns">
                 <label class="search">
                     <i class="fi-magnifying-glass"></i>
                     <input type="text" placeholder="Search..." />

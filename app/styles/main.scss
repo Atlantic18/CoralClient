@@ -263,6 +263,21 @@
             cursor: move !important;
             width: 18rem;
 
+            sup {
+              font-size: .5rem;
+              background: #c00;
+              text-align: center;
+              line-height: .8rem;
+              width: .8rem;
+              height: .8rem;
+              border-radius: .4rem;
+              display: inline-block;
+              left: -.3rem;
+              position: relative;
+              top: -.6rem;
+              color: white;
+            }
+
             &::before {
               content: '';
               display: block;
@@ -272,8 +287,10 @@
               width: 0;
               height: 0;
               border-style: solid;
-              border-width: .2rem 0 .2rem .4rem;
-              border-color: transparent transparent transparent #888;
+              // border-width: .2rem 0 .2rem .4rem;
+              border-width: .4rem .2rem 0 .2rem;
+              // border-color: transparent transparent transparent #888;
+              border-color: #888 transparent transparent transparent;
               margin-top: -.2rem;
             }
 
