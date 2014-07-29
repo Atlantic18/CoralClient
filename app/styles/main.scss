@@ -64,6 +64,47 @@
         }
       }
 
+      & > table {
+        border-style: none;
+        border-top: 1px solid #ccc;
+        background: #f5f5f5;
+        width: 100%;
+
+        thead, tbody {
+          tr th, tr td {
+            padding: 1rem;
+            background: #f5f5f5;
+            border-style: none;
+            vertical-align: middle;
+
+            &:last-child {
+              padding-left: 0;
+            }
+          }
+        }
+
+        tbody tr:nth-child(1) td {
+          border-top: 1px solid #ccc;
+        }
+
+        tbody tr:nth-child(even) td {
+          background: #f5f5f5;
+        }
+
+        tbody tr:nth-child(odd) td {
+          background: #e5e5e5;
+        }
+
+        tfoot {
+          tr td, tr th {
+            background: white;
+            border-style: none;
+            border-top: 1px solid #ccc;
+            padding: 1rem;
+          }
+        }
+      }
+
       h3 {
         font-size: 85%;
         color: #555;
@@ -71,12 +112,14 @@
         margin-bottom: 1rem;
       }
 
-      input[type=text] {
-        background: #e5e5e5;
+      input[type=text],
+      textarea,
+      select {
+        background-color: #e5e5e5;
         color: #222;
-        border-color: #ccc;
-        margin: 0;
+        border: 1px solid #ccc;
         box-shadow: none;
+        margin: 0;
       }
 
       .postfix {
@@ -111,6 +154,14 @@
             font-size: 85%;
           }
 
+          .row {
+            margin-bottom: 1rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
           label {
             color: #555;
             font-size: 85%;
@@ -118,14 +169,6 @@
             input[type=text] {
               margin-top: .3rem;
             }
-          }
-
-          textarea,
-          select {
-            background-color: #e5e5e5;
-            color: #222;
-            border: 1px solid #ccc;
-            box-shadow: none;
           }
 
           textarea {
@@ -208,6 +251,58 @@
         }
       }
 
+      &#dropdown-redirections {
+        tbody tr td {
+          cursor: move;
+
+          i.fi-x {
+            float: right;
+            cursor: pointer !important;
+            opacity: 0;
+            transition: opacity .5s;
+          }
+
+          &:hover {
+            i.fi-x {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &#dropdown-search {
+        margin-left: 0;
+
+        section.body {
+          h3, h3 a {
+            font-size: 100%;
+            font-weight: bold;
+            color: #555;
+            margin: 0 0 .2rem 0;
+            text-decoration: none;
+          }
+
+          h3 a:hover {
+            text-decoration: underline;
+          }
+
+          p {
+            color: #888;
+            font-size: 85%;
+            margin: 0 0 .2rem 0;
+
+            a {
+              color: #555;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
       &#dropdown-sitemap {
         ul.coral-tree {
           &,
@@ -264,13 +359,12 @@
             width: 18rem;
 
             sup {
-              font-size: .5rem;
+              font-size: .7rem;
+              font-weight: bold;
               background: #c00;
-              text-align: center;
-              line-height: .8rem;
-              width: .8rem;
-              height: .8rem;
-              border-radius: .4rem;
+              padding: .2rem;
+              line-height: .7rem;
+              border-radius: .5rem;
               display: inline-block;
               left: -.3rem;
               position: relative;

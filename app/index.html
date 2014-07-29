@@ -34,11 +34,11 @@
                         <i class="fi-compass"></i>
                         <label>Sitemap</label>
                     </a>
-                    <a class="item">
+                    <a class="item" data-dropdown="dropdown-redirections">
                         <i class="fi-target"></i>
                         <label>Redirections</label>
                     </a>
-                    <a class="item">
+                    <a class="item" data-dropdown="dropdown-translations">
                         <i class="fi-megaphone"></i>
                         <label>Translations</label>
                     </a>
@@ -46,6 +46,127 @@
                         <i class="fi-social-github"></i>
                         <label>Source</label>
                     </a>
+                </div>
+
+                <div id="dropdown-redirections" data-dropdown-content class="f-dropdown large content">
+                    <section class="header">
+                        <h2>Redirections</h2>
+                    </section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                                <th><abbr title="301 - moved permanently, 307 - temporary redirect">Redirection type</abbr></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th colspan="3">4 redirections (<a>add new</a>)</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>http://skipper18.com/</td>
+                                <td>http://www.skipper18.com/en</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>/en</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td>/downloads</td>
+                                <td>/skipper-downloads</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="/article/*" /></td>
+                                <td><input type="text" value="/blog/*" /></td>
+                                <td>
+                                    <select>
+                                        <option>301</section>
+                                        <option>307</section>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>/downloads</td>
+                                <td>/skipper-downloads</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="dropdown-translations" data-dropdown-content class="f-dropdown large content">
+                    <section class="header">
+                        <h2>Translations</h2>
+                    </section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="text" placeholder="Search for source..." /></th>
+                                <th><input type="text" placeholder="Search for translation..." /></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">120 <a>all translations</a>, 50 <a>untranslated</a></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td><input type="text" value="Duis erat ipsum" /></td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div id="dropdown-gallery" data-dropdown-content class="f-dropdown large content">
@@ -233,8 +354,35 @@
             <div class="large-4 large-offset-1 columns">
                 <label class="search">
                     <i class="fi-magnifying-glass"></i>
-                    <input type="text" placeholder="Search..." />
+                    <input type="text" placeholder="Search..." data-dropdown="dropdown-search" />
                 </label>
+
+                <div id="dropdown-search" data-dropdown-content class="f-dropdown small content">
+                    <section class="header">
+                        <h2>Found 5 pages...</h2>
+                    </section>
+                    <section class="body">
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                    </section>
+                </div>
             </div>
         </div>
     </section>
