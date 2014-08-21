@@ -1,11 +1,12 @@
 {
-  "name": "a18client",
+  "name": "coralclient",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-coffee": "~0.8.2",
     "grunt-contrib-jst": "~0.5.1",
     "grunt-contrib-uglify": "~0.3.1",
     "grunt-contrib-compass": "~0.7.0",

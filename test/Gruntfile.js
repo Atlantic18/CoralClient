@@ -1,5 +1,5 @@
 'use strict';
-var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 9001;
 var SERVER_PORT = 9000;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
@@ -31,6 +31,14 @@ module.exports = function (grunt) {
             options: {
                 nospawn: true,
                 livereload: true
+            },
+            coffee: {
+                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+                tasks: ['coffee:dist']
+            },
+            coffeeTest: {
+                files: ['test/spec/{,*/}*.coffee'],
+                tasks: ['coffee:test']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -130,6 +138,28 @@ module.exports = function (grunt) {
                     run: true,
                     urls: ['http://localhost:<%= connect.test.options.port %>/index.html']
                 }
+            }
+        },
+        coffee: {
+            dist: {
+                files: [{
+                    // rather than compiling multiple files here you should
+                    // require them into your main .coffee file
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/scripts',
+                    src: '{,*/}*.coffee',
+                    dest: '.tmp/scripts',
+                    ext: '.js'
+                }]
+            },
+            test: {
+                files: [{
+                    expand: true,
+                    cwd: 'test/spec',
+                    src: '{,*/}*.coffee',
+                    dest: '.tmp/spec',
+                    ext: '.js'
+                }]
             }
         },
         compass: {
@@ -265,6 +295,7 @@ module.exports = function (grunt) {
         if (target === 'test') {
             return grunt.task.run([
                 'clean:server',
+                'coffee',
                 'createDefaultTemplate',
                 'jst',
                 'compass:server',
@@ -276,6 +307,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'coffee:dist',
             'createDefaultTemplate',
             'jst',
             'compass:server',
@@ -289,6 +321,7 @@ module.exports = function (grunt) {
         isConnected = Boolean(isConnected);
         var testTasks = [
                 'clean:server',
+                'coffee',
                 'createDefaultTemplate',
                 'jst',
                 'compass',
@@ -307,6 +340,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'coffee',
         'createDefaultTemplate',
         'jst',
         'compass:dist',

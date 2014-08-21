@@ -1,115 +1,761 @@
 <!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>A18Client</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A18Client</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/foundation-icons.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <meta name="language" content="en" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body class="antialiased off-canvas hide-extras">
+<div id="coral-client">
+    <section class="bar">
+        <div class="row">
+            <div class="large-7 columns">
+                <div class="icon-bar six-up">
+                    <a class="item" data-dropdown="dropdown-properties">
+                        <i class="fi-widget"></i>
+                        <label>Page details</label>
+                    </a>
+                    <a class="item" data-dropdown="dropdown-gallery">
+                        <i class="fi-photo"></i>
+                        <label>Images</label>
+                    </a>
+                    <a class="item" data-dropdown="dropdown-sitemap">
+                        <i class="fi-compass"></i>
+                        <label>Sitemap</label>
+                    </a>
+                    <a class="item" data-dropdown="dropdown-redirections">
+                        <i class="fi-target"></i>
+                        <label>Redirections</label>
+                    </a>
+                    <a class="item" data-dropdown="dropdown-translations">
+                        <i class="fi-megaphone"></i>
+                        <label>Translations</label>
+                    </a>
+                    <a class="item">
+                        <i class="fi-social-github"></i>
+                        <label>Source</label>
+                    </a>
+                </div>
+
+                <div id="dropdown-redirections" data-dropdown-content class="f-dropdown large content">
+                    <div class="loader"></div>
+                    <section class="header">
+                        <h2>Redirections</h2>
+                    </section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                                <th><abbr title="301 - moved permanently, 307 - temporary redirect">Redirection type</abbr></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th colspan="3">4 redirections (<a>add new</a>)</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>http://skipper18.com/</td>
+                                <td>http://www.skipper18.com/en</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td>/</td>
+                                <td>/en</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td>/downloads</td>
+                                <td>/skipper-downloads</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" value="/article/*" /></td>
+                                <td><input type="text" value="/blog/*" /></td>
+                                <td>
+                                    <select>
+                                        <option>301</section>
+                                        <option>307</section>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>/downloads</td>
+                                <td>/skipper-downloads</td>
+                                <td>301 <i class="fi-x"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="dropdown-translations" data-dropdown-content class="f-dropdown large content">
+                    <section class="header">
+                        <h2>Translations</h2>
+                    </section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="text" placeholder="Search for source..." /></th>
+                                <th><input type="text" placeholder="Search for translation..." /></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">120 <a>all translations</a>, 50 <a>untranslated</a></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td><input type="text" value="Duis erat ipsum" /></td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                            <tr>
+                                <td>Integer ac mollis</td>
+                                <td>Duis erat ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>Phasellus pulvinar no</td>
+                                <td>Aliquam eu nisl id</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="dropdown-gallery" data-dropdown-content class="f-dropdown large content">
+                    <div class="loader"></div>
+
+                    <section class="header">
+                        <h2>Image gallery</h2>
+                    </section>
+                    <section class="body">
+                        <div class="upload">
+                            <i class="fi-upload-cloud"></i><p>Place a new file here</p>
+                            <input type="file">
+                        </div>
+                        <div class="row collapse">
+                            <div class="small-9 columns">
+                                <input type="text" class="search" placeholder="Search for an image in the gallery..." />
+                            </div>
+                            <div class="small-3 columns">
+                                <a href="#" class="button radius postfix">Search</a>
+                            </div>
+                        </div>
+                        <div class="recent">
+                            <h3>1 093 images in the gallery</h3>
+
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-1-project%20import.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-2-import-wizard.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-3-files-to-import.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-5-imported-project.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-1-project%20import.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-2-import-wizard.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-3-files-to-import.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                            <a style="background-image: url('https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-5-imported-project.thumbs.85.png')" title="Click to get markdown link">Thumbnail</a>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="dropdown-sitemap" data-dropdown-content class="f-dropdown large content">
+                    <section class="header">
+                        <h2>Sitemap</h2>
+                    </section>
+                    <section class="body">
+                        <ul class="coral-tree sortable">
+                            <li>
+                                <a>Homepage</a>
+                                <ul>
+                                    <li>
+                                        <a class="active"><input type="text" value="Features" /><i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                        <ul>
+                                            <li>
+                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                            </li>
+                                            <li>
+                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>About<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                    </li>
+                                    <li>
+                                        <a>Company<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                        <ul>
+                                            <li>
+                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                                <ul>
+                                                    <li>
+                                                        <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a>Features<i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>About <sup>19</sup><i class="fi-x"></i><i class="fi-page-add"></i><i class="fi-indent-more"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="footer">
+                        <ul class="button-group radius right">
+                            <li><a href="#" class="cancel secondary button tiny"><i class="fi-x"></i> Cancel</a></li>
+                            <li><a href="#" class="success button tiny"><i class="fi-check"></i> Save</a></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div id="dropdown-properties" data-dropdown-content class="f-dropdown large content">
+                    <form>
+                        <section class="header">
+                            <h2>Homepage properties</h2>
+                        </section>
+                        <section class="body">
+                            <fieldset>
+                                <legend>Mandatory properties</legend>
+                                <div class="row">
+                                    <div class="large-6 columns">
+                                        <label for="properties-form-title">Title
+                                            <input type="text" id="properties-form-title" />
+                                        </label>
+                                    </div>
+                                    <div class="large-6 columns">
+                                        <label for="properties-form-slug">Slug
+                                            <input type="text" id="properties-form-slug" />
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Attributes</legend>
+
+                                <div class="row">
+                                    <div class="large-5 columns">
+                                        <select>
+                                            <option value="1">tree_permission</option>
+                                            <option value="2">template</option>
+                                        </select>
+                                    </div>
+                                    <div class="large-7 columns">
+                                        <div class="row collapse">
+                                            <div class="small-10 columns">
+                                                <input type="text" placeholder="some template" />
+                                            </div>
+                                            <div class="small-2 columns">
+                                                <a class="button postfix radius" title="remove"><i class="fi-minus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="large-5 columns">
+                                        <select>
+                                            <option value="1">tree_permission</option>
+                                            <option value="2">template</option>
+                                        </select>
+                                    </div>
+                                    <div class="large-7 columns">
+                                        <div class="row collapse">
+                                            <div class="small-10 columns">
+                                                <textarea placeholder="some template" rows="10"></textarea>
+                                            </div>
+                                            <div class="small-2 columns">
+                                                <a class="button textarea postfix radius" title="remove"><i class="fi-minus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="large-5 end columns">
+                                        <div class="row collapse">
+                                            <div class="small-10 columns">
+                                                <input type="text" placeholder="Add new attribute..." />
+                                            </div>
+                                            <div class="small-2 columns">
+                                                <a class="button postfix radius" title="remove"><i class="fi-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </section>
+                        <section class="footer">
+                            <ul class="button-group radius right">
+                                <li><a href="#" class="cancel secondary button tiny"><i class="fi-x"></i> Cancel</a></li>
+                                <li><a href="#" class="success button tiny"><i class="fi-check"></i> Save</a></li>
+                            </ul>
+                        </section>
+                    </form>
+                </div>
+            </div>
+            <div class="large-4 large-offset-1 columns">
+                <label class="search">
+                    <i class="fi-magnifying-glass"></i>
+                    <input type="text" placeholder="Search..." data-dropdown="dropdown-search" />
+                </label>
+
+                <div id="dropdown-search" data-dropdown-content class="f-dropdown small content">
+                    <section class="header">
+                        <h2>Found 5 pages...</h2>
+                    </section>
+                    <section class="body">
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                        <hr />
+                        <h3><a>About us page</a></h3>
+                        <p><a>/en/profile/about-us</a> <i class="fi-page-export"></i></p>
+                        <p>Created: 2012/07/12, Last update: 2014/08/10</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+</div>
+
+<div id="main">
+    <section class="a18-header">
+        <div class="row">
+            <div class="large-12 columns">
+                <ul>
+                    <li><a href="http://help.skipper18.com/">Documentation</a></li>
+                    <li><a href="http://support.skipper18.com">Support Forum</a></li>
+                    <li><a href="/en/contact">Contact Us</a></li>
                 </ul>
-                <h3 class="text-muted">A18Client</h3>
             </div>
+        </div>
+    </section>
 
-            <div class="jumbotron">
-                <h1>&apos;Allo, &apos;Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+    <section class="skipper-header">
+        <div class="row">
+            <div class="large-2 columns">
+                <a href="/" class="home">skipper homepage</a>
             </div>
-
-            <div class="row text-left">
-                <div class="col-md-offset-4">
-                    <h2>Now Try,</h2>
-                    <h4><b>yo backbone:router</b> &lt;router&gt;</h4>
-                    <h4><b>yo backbone:collection</b> &lt;collection&gt;</h4>
-                    <h4><b>yo backbone:model </b> &lt;model&gt;</h4>
-                    <h4><b>yo backbone:view </b> &lt;view&gt;</h4>
-                </div>
+            <div class="large-10 columns">
+                <ul>
+                    <li><a href="/en/features"><span class="arrow-right"></span>Features</a></li>
+                    <li class="has_children ">
+                        <div class="top-menu">
+                            <span class="arrow-right"></span>Frameworks
+                        </div>
+                        <ul>
+                            <li><a href="/en/doctrine2"><span class="arrow-right"></span>Doctrine 2</a></li>
+                            <li><a href="/en/doctrine"><span class="arrow-right"></span>Doctrine</a></li>
+                            <li><a href="/en/propel"><span class="arrow-right"></span>Propel</a></li>
+                            <li><a href="/en/cakephp"><span class="arrow-right"></span>Cake PHP</a></li>
+                            <li><a href="/en/mvc-frameworks"><span class="arrow-right"></span>MVC Frameworks</a></li>
+                            <li><a href="/en/customized-orm"><span class="arrow-right"></span>Customized &amp; in-house ORM</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/en/our-customers"><span class="arrow-right"></span>Our customers</a></li>
+                    <li><a href="/en/pricing"><span class="arrow-right"></span>Pricing</a></li>
+                    <li><a href="https://secure.skipper18.com"><span class="arrow-right"></span>Buy Now</a></li>
+                    <li><a href="http://downloads.skipper18.com/3.0.0.1104/Skipper-3.0.0.1104-Windows-all-32bit.exe" class="button radius">Download<br /><strong>FREE TRIAL</strong></a></li>
+                </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-                    <h4>Modernizr</h4>
-                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
-                </div>
-                <div class="col-lg-6">
-                    <h4>Backbone.js</h4>
-                    <p>Backbone.js gives structure to web applications by providing models, collections, views and connects it all to your existing API over a RESTful JSON interface.</p>
-
-                    <h4>Underscore.js</h4>
-                    <p>Underscore.js is a utility-belt library for JavaScript that provides a lot of the functional programming support</p>
-
-
-                </div>
+    <section class="download">
+        <div class="row">
+            <div class="large-8 columns">
+                <h2>Download 14-day trial version</h2>
+                <h3>Try Skipper for free. No credit card needed.</h3>
             </div>
-
-            <div class="footer">
-                <p>&#x2665; from the Yeoman team</p>
+            <div class="large-4 columns">
+                <a href="http://downloads.skipper18.com/3.0.0.1104/Skipper-3.0.0.1104-Windows-all-32bit.exe" class="gradient-button button">Download<br /><strong>FREE TRIAL</strong></a>
             </div>
+        </div>
+    </section>
 
+    <hr />
+
+    <section class="framework-features">
+        <h1 data-coral="header" data-widget="p1324">Why use Skipper</h1>
+
+        <div class="row">
+            <div class="large-6 columns" data-coral="content-1">
+                <h2 data-widget="p1324">Now Try,</h2>
+                <h4 data-widget="p1324"><b>yo backbone:router</b> &lt;router&gt;</h4>
+                <h4 data-widget="p1324"><b>yo backbone:collection</b> &lt;collection&gt;</h4>
+                <h4 data-widget="p1324"><b>yo backbone:model </b> &lt;model&gt;</h4>
+                <h4 data-widget="p1324"><b>yo backbone:view </b> &lt;view&gt;</h4>
+
+                <h3>Simple Project import</h3>
+                <p>With sophisticated import wizard you can import your existing Doctrine 2 projects in just a few clicks. Created visual model allows you to discover complete project logic simply and quickly.</p>
+                <img title="Skipper file menu" alt="Skipper file menu" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-1-project%20import.thumbs.85.png">
+                <img title="Skipper Doctrine2 import wizard" alt="Skipper Doctrine2 import wizard" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-2-import-wizard.thumbs.85.png">
+                <img title="Skipper Doctrine2 import wizard - definition files" alt="Skipper Doctrine2 import wizard - definition files" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-3-files-to-import.thumbs.85.png">
+                <img title="Skipper imported Doctrine2 project" alt="Skipper imported Doctrine2 project" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/1-5-imported-project.thumbs.85.png">
+            </div>
+            <div class="large-6 columns">
+                <h3>Definitions exported by one click</h3>
+                <p>You can export your Doctrine 2 project repeatedly and as many times as you need. Exported definitions are in standardized and ready-to-use format without the need of further editing.</p>
+                <img title="Skipper Doctrine2 export settings" alt="Skipper Doctrine2 export settings" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/2-1-export%20settings.thumbs.85.png">
+                <img title="Skipper Doctrine2 export results" alt="Skipper Doctrine2 export results" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/2-2-export-results.thumbs.85.png">
+                <img title="Doctrine2 definitions exported by Skipper" alt="Doctrine2 definitions exported by Skipper" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/2-3-definitions-xml.thumbs.85.png">
+            </div>
         </div>
 
+        <div class="row">
+            <div class="large-6 columns">
+                <h3>Editing in visual interface</h3>
+                <p>Intuitive wizards and dialogs guide you through editing of all objects. Each change in model is properly transferred to the definition files in the moment of their export.</p>
+                <img title="Skipper entity editor for Doctrine2" alt="Skipper entity editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-1-entity-editor.thumbs.85.png">
+                <img title="Skipper bundle editor for Doctrine2" alt="Skipper bundle editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-2-module-editor.thumbs.85.png">
+                <img title="Skipper association editor for Doctrine2" alt="Skipper Association editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-3-association-editor.thumbs.85.png">
+            </div>
+            <div class="large-6 columns">
+                <h3>Lower need of Doctrine 2 skills</h3>
+                <p>Thanks to Skipper inbuilt value advisors, validators, assistants and definitions created via standardized templates you can stop worrying about Doctrine 2 syntax and keywords.</p>
+                <img title="Skipper Doctrine2 property editor - tracking policies, entity listener" alt="Skipper Doctrine2 property editor - tracking policies, entity listener" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-1-property-editor.thumbs.85.png">
+                <img title="Skipper Doctrine2 property editor - lifecycle callback" alt="Skipper Doctrine2 property editor - lifecycle callback" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-2-lifecycle-callback.thumbs.85.png">
+                <img title="Skipper editing Doctrine2 fields" alt="Skipper editing Doctrine2 fields" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-3-entity-editor-datatypes.thumbs.85.png">
+            </div>
+        </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+        <hr />
 
-        <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/backbone/backbone.js"></script>
-        <!-- endbuild -->
+        <h1>Support for all Doctrine 2 features</h1>
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
+        <div class="row">
+            <div class="large-6 columns">
+                <h3>Editing in visual interface</h3>
+                <p>Intuitive wizards and dialogs guide you through editing of all objects. Each change in model is properly transferred to the definition files in the moment of their export.</p>
+                <img title="Skipper entity editor for Doctrine2" alt="Skipper entity editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-1-entity-editor.thumbs.85.png">
+                <img title="Skipper bundle editor for Doctrine2" alt="Skipper bundle editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-2-module-editor.thumbs.85.png">
+                <img title="Skipper association editor for Doctrine2" alt="Skipper Association editor for Doctrine2" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/3-3-association-editor.thumbs.85.png">
+            </div>
+            <div class="large-6 columns">
+                <h3>Lower need of Doctrine 2 skills</h3>
+                <p>Thanks to Skipper inbuilt value advisors, validators, assistants and definitions created via standardized templates you can stop worrying about Doctrine 2 syntax and keywords.</p>
+                <img title="Skipper Doctrine2 property editor - tracking policies, entity listener" alt="Skipper Doctrine2 property editor - tracking policies, entity listener" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-1-property-editor.thumbs.85.png">
+                <img title="Skipper Doctrine2 property editor - lifecycle callback" alt="Skipper Doctrine2 property editor - lifecycle callback" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-2-lifecycle-callback.thumbs.85.png">
+                <img title="Skipper editing Doctrine2 fields" alt="Skipper editing Doctrine2 fields" class="align_left" src="https://s3.amazonaws.com/Skipper18com/Images/Frameworks/Doctrine2/4-3-entity-editor-datatypes.thumbs.85.png">
+            </div>
+        </div>
 
-        <!-- build:js({.tmp,app}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/templates.js"></script>
-        <!-- endbuild -->
+        <div class="row">
+            <div class="large-6 columns">
+                <h3>Customization</h3>
+                <p>Implement your own customizations to Skipper so it maximally suits your needs. Create new behaviors, configure custom properties or datatypes or connect Skipper with external tools.</p>
+            </div>
+            <div class="large-6 columns">
+                <h3>Support for MVC frameworks</h3>
+                <p>With Skipper you can use Symfony, Zend or other MVC framework without any limitation. Skipper exports definitions with support for any MVC framework.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonies">
+        <h2>Over 1,000 companies use Skipper every day</h2>
+
+        <div class="row logos">
+            <div class="large-12 columns">
+                <a href="/en/our-customers" class="savvior">Savvior</a>
+                <a href="/en/our-customers" class="manifest">Manifest</a>
+                <a href="/en/our-customers" class="ids">IDS</a>
+                <a href="/en/our-customers" class="explicatis">Explicatis</a>
+                <a href="/en/our-customers" class="colorgate">ColorGATE</a>
+                <a href="/en/our-customers" class="biber">biber</a>
+            </div>
+        </div>
+
+        <div class="row testimony-slider">
+            <div class="large-12 columns">
+                <span class="shift-prev"></span>
+                <span class="shift-next"></span>
+
+                <div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-1"></div></div></div>
+                            <p>We have good use of the tool. It simplifies our daily work, saves us time and is simple and intuitive to use.</p>
+                            <p><em>Thomas Somoen, Try/Apt</em></p>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-2"></div></div></div>
+                            <p>Simply put, for us, Skipper is not just a tool to master, but a mastermind that teaches us the best programming practices.</p>
+                            <p><em>Can Berkol, Biber Ltd</em></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-3"></div></div></div>
+                            <p>Skipper is a stable and easy to use schema designing tool! No documentation, just design and everything is documented!</p>
+                            <p><em>Siebe Vos, Inform&#039;aid</em></p>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-4"></div></div></div>
+                            <p>It is faster and gives less errors to have Skipper create the mapping code instead of writing it myself. Later in the development process I often use the Skipper diagram as a quick reference.</p>
+                            <p><em>Herman Peeren, Yepr</em></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-5"></div></div></div>
+                            <p>We use Skipper on our daily basis for ecommerce software development. It lets us visualize at a glance the data models and work on them in a simple and easy way.</p>
+                            <p><em>Dario Schilman, IDS Soluciones Ecommerce</em></p>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class='hexagon'><div><div class="testimony-6"></div></div></div>
+                            <p>It saved us a lot of time designing and configuring complex data models. It is impressive to see what this software achieves on its own.</p>
+                            <p><em>Michael Stoye, ColorGATE</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <p><span class="arrow-right"></span>More <a href="/en/our-customers">user stories</a></p>
+            </div>
+        </div>
+
+        <style>
+            .testimony-1:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/thomas.somoen.png); }
+            .testimony-2:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/can.berkol.png); }
+            .testimony-3:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/siebe.vos.png); }
+            .testimony-4:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/herman.peeren.png); }
+            .testimony-5:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/dario.schilman.png); }
+            .testimony-6:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/logo_colorgate.png); }
+            .testimony-7:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/joern.wagner.png); }
+            .testimony-8:before { background-image: url(https://s3.amazonaws.com/Skipper18com/Images/Testimonials/erwin.te.bos.png); }
+        </style>
+    </section>
+
+    <section class="framework-features">
+        <div class="row">
+            <div class="large-12 columns">
+                <h1>Detailed List of supported Doctrine 2 ORM properties</h1>
+
+                <h3>ORM Designer model properties</h3>
+
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th>Object</th>
+                            <th>Property</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project</td>
+                            <td>name, storage path, description</td>
+                        </tr>
+                        <tr>
+                            <td>Module</td>
+                            <td>name, description, external plugin storage, export path and format</td>
+                        </tr>
+                        <tr>
+                            <td>Entity</td>
+                            <td>name, description</td>
+                        </tr>
+                        <tr>
+                            <td>Field</td>
+                            <td>name, type, size, required, unique, primary key, auto increment, default value, enum values, description</td>
+                        </tr>
+                        <tr>
+                            <td>Association</td>
+                            <td>owner/inverse entity, reference fields, owner/inverse alias, association type (one-to-one, one-to-many), parent requirement, description</td>
+                        </tr>
+                        <tr>
+                            <td>Many to Many</td>
+                            <td>mn entity, owner/inverse entity, reference fields, owner/inverse alias, description</td>
+                        </tr>
+                        <tr>
+                            <td>Inheritance</td>
+                            <td>base/derived entity, inheritance type, discriminator value/field, description</td>
+                        </tr>
+                        <tr>
+                            <td>Index</td>
+                            <td>name, unique, indexed fields, description</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="row">
+            <div class="medium-6 large-3 columns">
+                <h3>About Skipper</h3>
+                <ul>
+                    <li><a href="/en/features">Features</a></li>
+                    <li><a href="/en/download">Downloads</a></li>
+                    <li><a href="/en/previous-releases">Previous releases</a></li>
+                    <li><a href="/en/our-customers">Our Customers</a></li>
+                </ul>
+                <br/>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="http://help.skipper18.com">Documentation</a></li>
+                    <li><a href="/en/video-tutorials">Video tutorials</a></li>
+                    <li><a href="http://support.skipper18.com">Support Forum</a></li>
+                    <li><a href="http://help.skipper18.com/en/supported-platforms">System Requirements</a></li>
+                </ul>
+            </div>
+            <div class="medium-6 large-3 columns">
+                <h3>Supported Frameworks</h3>
+                <ul>
+                    <li><a href="/en/doctrine">Doctrine</a></li>
+                    <li><a href="/en/doctrine2">Doctrine2</a></li>
+                    <li><a href="/en/cakephp">CakePHP</a></li>
+                    <li><a href="/en/propel">Propel</a></li>
+                </ul>
+                <br/>
+                <ul>
+                    <li><a href="/en/mvc-frameworks">Symfony</a></li>
+                    <li><a href="/en/mvc-frameworks">Symfony2</a></li>
+                    <li><a href="/en/mvc-frameworks">Zend Framework</a></li>
+                </ul>
+                <br/>
+                <ul>
+                    <li><a href="/en/customized-orm">Customized &amp; in-house ORM</a></li>
+                </ul>
+            </div>
+            <div class="medium-12 large-2 columns">
+                <h3>Purchase</h3>
+                <ul>
+                    <li><a href="/en/pricing">Pricing</a></li>
+                    <li><a href="https://secure.skipper18.com">Buy Now</a></li>
+                </ul>
+                <h3>Terms and conditions</h3>
+                <ul>
+                    <li><a href="http://help.skipper18.com/en/terms-of-use">Terms of Use</a></li>
+                    <li><a href="http://help.skipper18.com/en/terms-of-use#PrivacyPolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="medium-12 large-4 columns">
+                <div class="row">
+                    <div class="large-2 columns"></div>
+                    <div class="large-10 columns">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="/en/contact">Contact Us</a></li>
+                            <li><a href="http://blog.skipper18.com">Blog</a></li>
+                        </ul>
+                        <h3>Connect with us</h3>
+                        <ul class="social">
+                            <li><a href="https://twitter.com/ormdesigner" class="twitter">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="payment-logos">
+                    <span class="braintree"></span>
+                    <span class="paypal"></span>
+                    <span class="paypal-verified"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row copyright">
+            <div class="large-12 columns">
+                <span class="logo">skipper</span>
+                <p>Copyright &copy;2014 Inventic s.r.o. All rights reserved.</p>
+                <p>Skipper is being developed as part of Atlantic18 projects.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/foundation/js/foundation.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+<!-- endbuild -->
+
+<script type="text/javascript">
+$(document).foundation({
+    dropdown: {
+        active_class: 'open'
+    }
+});
+</script>
+
+<!-- build:js({.tmp,app}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/templates.js"></script>
+<script src="scripts/models/redirection.js"></script>
+<!-- endbuild -->
 </body>
 </html>

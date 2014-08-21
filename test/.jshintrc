@@ -20,8 +20,8 @@
     "smarttabs": true,
     "jquery": true,
     "globals": {
-        "A18Client": true,
-        "a18client": true,
+        "Coralclient": true,
+        "coralclient": true,
         "_": false,
         "Backbone": false,
         "JST": false,
