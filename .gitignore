@@ -3,6 +3,8 @@ dist
 test/temp
 .sass-cache
 app/bower_components
-test/.tmp
+.tmp
 bower_components/
 test/bower_components/
+*.sublime-project
+*.sublime-workspace
