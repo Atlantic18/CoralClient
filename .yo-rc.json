@@ -1,7 +1,7 @@
 {
   "generator-backbone": {
     "appPath": "app",
-    "appName": "Coralclient",
+    "appName": "Coral",
     "coffee": true,
     "testFramework": "mocha",
     "templateFramework": "lodash",

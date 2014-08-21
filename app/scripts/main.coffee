@@ -1,4 +1,4 @@
-window.Coralclient =
+window.Coral =
   Models: {}
   Collections: {}
   Views: {}
@@ -9,4 +9,4 @@ window.Coralclient =
 
 $ ->
   'use strict'
-  Coralclient.init();
+  Coral.init();
