@@ -1,8 +1,8 @@
-test/node_modules
+node_modules
 dist
-test/test/temp
-test/.sass-cache
+test/temp
+.sass-cache
 app/bower_components
 test/.tmp
+bower_components/
 test/bower_components/
-test/test/bower_components/
